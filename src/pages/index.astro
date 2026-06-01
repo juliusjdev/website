@@ -1,11 +1,42 @@
----
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+<section class="hero">
+  <img src="/WIDAlogo.png" class="logo" />
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
----
+  <h1>WIDA</h1>
 
-<Layout>
-	<Welcome />
-</Layout>
+  <p>ECL organisation from Finland</p>
+</section>
+
+<style>
+  body {
+    margin: 0;
+    font-family: sans-serif;
+  }
+
+  .hero {
+    min-height: 100vh;
+
+    background:
+      linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+      url('/backgrounds/widabackground.jpg');
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    text-align: center;
+  }
+
+  .logo {
+    width: 180px;
+  }
+
+  h1 {
+    font-size: clamp(4rem, 10vw, 10rem);
+    letter-spacing: 6px;
+  }
+</style>
