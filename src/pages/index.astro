@@ -1,16 +1,341 @@
+---
+import '@fortawesome/fontawesome-free/css/all.min.css';
+---
+
+
+
 <section class="hero">
-  <img src="/WIDAlogo.png" class="logo" />
+
+
+
+
+  
+<button class="burger">
+  &#9776;
+</button>
+
+<nav class="navbar">
+  <a href="#">Home</a>
+  <a href="#">Teams</a>
+  <a href="#">Contact</a>
+</nav>
+
+  <img src="/WIDAlogo.png" class="logo" alt="WIDA logo" />
 
   <h1>WIDA</h1>
 
   <p>ECL organisation from Finland</p>
+  <div class="divider"></div>
+
+
+<div class="socials">
+  <a href="https://discord.com/invite/EbpBmBbVuz" 
+  target="_blank"
+  rel="noopener noreferrer">
+  <i class="fab fa-discord"></i></a>
+
+  <a href="https://www.twitch.tv/widaesport" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitch"></i></a>
+
+  <a href="https://www.instagram.com/widaesport/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+
+  <a href="https://x.com/widaesport" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+
+  <a href="https://www.youtube.com/@widaesport" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+
+  <a href="https://www.tiktok.com/@widaesport?_r=1&_t=ZN-93ztEUKhobm" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+</div>
+
+
+
+<section class="about">
+  <h2>Follow us on social media</h2>
+
+  <p>
+  Wida aims to maintain an active presence on
+  social media. Become part of the story and follow
+  us through the links above!
+  </p>
 </section>
 
+
+
+<section class="community-section">
+  <div class="community-content">
+    <h2>Wida, growing ECL organization</h2>
+
+    <p>
+      Our goal is to build the Wida community and make it easy for our
+      followers to follow the team. Join the Wida Discord server to stay
+      up to date with upcoming matches!
+    </p>
+
+    <a href="https://discord.com/invite/EbpBmBbVuz" class="discord-button">
+      Join Wida's Discord server
+    </a>
+  </div>
+
+  <div class="community-image">
+    <img src="/home/homepage1.png" alt="WIDA player" />
+  </div>
+</section>
+
+</section>
+
+
+
 <style>
+
+
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+h1 {
+  font-family: 'Michroma', sans-serif;
+
+  font-size: clamp(4rem, 10vw, 10rem);
+
+  letter-spacing: 8px;
+
+  margin: 0;
+}
+
+
+
+.about {
+
+  color: white;
+
+  padding: 2rem 2rem;
+
+  text-align: center;
+
+
+}
+
+.about h2 {
+  font-family: 'Michroma', sans-serif;
+
+  font-size: 2.5rem;
+
+  letter-spacing: 4px;
+
+  margin-bottom: 1.5rem;
+}
+
+.about p {
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  line-height: 1.5;
+
+  opacity: 0.8;
+
+  font-size: 1.1rem;
+}
+
+
+.community-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.community-section {
+  background: #242424;
+  color: white;
+  padding: 6rem 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+
+  border-radius: 40px;
+
+  overflow: hidden;
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,.35);
+
+}
+
+
+
+.community-content h2 {
+  font-family: 'Michroma', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+.community-content p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+
+
+}
+
+.discord-button {
+  display: inline-block;
+  background: #679540;
+  color: #0b0b0b;
+  padding: 1rem 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.2s ease;
+  border-radius: 10px;
+}
+
+.discord-button:hover {
+  background: #7caf4d;
+  transform: translateY(-2px);
+}
+
+.community-image img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+}
+
+
+
+@media (max-width: 800px) {
+  .community-section {
+    grid-template-columns: 1fr;
+    padding: 4rem 2rem;
+  }
+
+  .community-content h2 {
+    font-size: 2.4rem;
+  }
+}
+
+
   body {
     margin: 0;
     font-family: sans-serif;
   }
+
+.divider {
+  width: 500px;
+  height: 2px;
+  background:
+  linear-gradient(to right, transparent, white, transparent);
+  margin-bottom: 2rem;
+  margin-top: -1rem;
+
+}
+.burger {
+  position: absolute;
+
+  top: 2rem;
+  left: 2rem;
+
+  background: transparent;
+
+  border: none;
+
+  color: white;
+
+  font-size: 2rem;
+
+  cursor: pointer;
+
+  z-index: 1000;
+}
+
+.navbar {
+	position: absolute;
+
+	z-index: 999;
+
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+  width: 250px;
+
+  background: rgba(0,0,0,.9);
+
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 6rem;
+
+  transform: translateX(-100%);
+
+  transition: transform .3s ease;
+}
+
+.navbar a {
+  color: white;
+
+  text-decoration: none;
+
+  padding: 1rem 2rem;
+
+  font-size: 1.2rem;
+}
+.socials a {
+  color: white;
+  text-decoration: none;
+}
+
+.logo {
+  width: 180px;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: clamp(4rem, 10vw, 10rem);
+  letter-spacing: 8px;
+  margin: 0;
+}
+
+p {
+  font-size: 1.2rem;
+  opacity: 0.85;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.socials a {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #679540;
+
+  border-radius: 50%;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 2rem;
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    box-shadow .2s ease;
+}
+
+.socials a:hover {
+  background: #679540;
+}
+
 
   .hero {
     min-height: 100vh;
@@ -21,6 +346,8 @@
 
     background-size: cover;
     background-position: center;
+	background-attachment: fixed;
+	
 
     display: flex;
     flex-direction: column;
@@ -29,7 +356,16 @@
 
     color: white;
     text-align: center;
-  }
+  
+
+	position: relative;
+	padding: 2rem;
+
+
+
+
+
+}
 
   .logo {
     width: 180px;
@@ -39,4 +375,28 @@
     font-size: clamp(4rem, 10vw, 10rem);
     letter-spacing: 6px;
   }
+
+.navbar.open {
+  transform: translateX(0);
+}
+
+
 </style>
+
+
+
+
+
+
+
+
+<script>
+  const burger = document.querySelector('.burger');
+  const navbar = document.querySelector('.navbar');
+
+  if (burger && navbar) {
+    burger.addEventListener('click', () => {
+      navbar.classList.toggle('open');
+    });
+  }
+</script>
