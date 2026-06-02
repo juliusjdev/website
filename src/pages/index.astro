@@ -94,6 +94,17 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
   body {
     margin: 0;
     font-family: sans-serif;
@@ -104,7 +115,6 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
     background-position: center;
     background-attachment: fixed;
     color: white;
-    overflow-x: hidden;
   }
 
   .hero {
@@ -397,9 +407,25 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 @media (max-width: 800px) {
+
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
   .hero {
     min-height: 100vh;
+
+    width: 100%;
+
     padding: 1.5rem;
+
+    text-align: center;
   }
 
   .logo {
@@ -408,49 +434,65 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
   h1 {
     font-size: clamp(3rem, 18vw, 5rem);
+
     letter-spacing: 3px;
   }
 
   .socials {
     flex-wrap: wrap;
+
     justify-content: center;
+
     gap: 0.7rem;
   }
 
   .socials a {
     width: 52px;
     height: 52px;
+
     font-size: 1.4rem;
   }
 
+  .divider,
+  .divider2 {
+    width: 80%;
+
+    max-width: 500px;
+  }
+
+  .about {
+    padding: 1rem;
+  }
+
   .about h2 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
+
     letter-spacing: 2px;
   }
 
   .about p {
     font-size: 0.95rem;
+
+    line-height: 1.5;
+  }
+
+  .community-section,
+  .values-section {
+    width: calc(100% - 2rem);
+
+    margin: 3rem auto;
+
+    padding: 2rem 1.2rem;
+
+    border-radius: 24px;
+
+    box-sizing: border-box;
   }
 
   .community-section {
-    width: 88%;
-    margin: 3rem auto;
-    padding: 2rem 1.2rem;
-
     grid-template-columns: 1fr;
+
     gap: 2rem;
-
-    border-radius: 24px;
-  }
-
-  .community-content h2 {
-    font-size: 2rem;
-    line-height: 1.15;
-  }
-
-  .community-content p {
-    font-size: 1rem;
-    line-height: 1.5;
   }
 
   .community-image {
@@ -459,28 +501,68 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
   .community-image img {
     width: 100%;
+
     max-height: 260px;
+
     object-fit: cover;
   }
 
-  .values-section {
-    width: 88%;
-    margin: 3rem auto;
-    padding: 2rem 1.2rem;
+  .community-content {
+    text-align: center;
+  }
 
-    border-radius: 24px;
+  .community-content h2 {
+    font-size: 2rem;
+
+    line-height: 1.15;
+  }
+
+  .community-content p {
+    font-size: 1rem;
+
+    line-height: 1.5;
+  }
+
+  .discord-button {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .values-section h2 {
+    font-size: 2rem;
+
+    text-align: center;
   }
 
   .value-row {
     grid-template-columns: 1fr;
+
+    gap: 1rem;
+
     text-align: center;
   }
 
   .value-row img {
+    width: 100%;
+
     height: 180px;
+
+    object-fit: cover;
+  }
+
+  .value-row h3 {
+    margin: 0;
+  }
+
+  .value-row p {
+    margin: 0;
+
+    font-size: 1rem;
+
+    line-height: 1.5;
   }
 }
-
 
 </style>
 
