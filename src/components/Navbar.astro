@@ -83,8 +83,7 @@
     transform: translateX(0);
   }
 
-  .navbar a,
-  .dropdown-toggle {
+  .navbar a, .dropdown-toggle {
     width: 100%;
 
     color: white;
@@ -96,6 +95,10 @@
     font-size: 1.1rem;
 
     text-align: left;
+  }
+
+  .navbar a:hover, .dropdown-toggle:hover {
+    color: #7caf4d;
   }
 
   .dropdown-toggle {
@@ -136,6 +139,11 @@
     padding-left: 3rem;
     font-size: 0.95rem;
     opacity: 0.85;
+  }
+
+    .dropdown-menu a:hover {
+    color: #7caf4d;
+    transform: translateX(6px);
   }
 
   .dropdown-menu.open {
