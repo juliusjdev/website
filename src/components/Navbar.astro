@@ -20,20 +20,42 @@
 </nav>
 
 <style>
-  .burger {
-    position: fixed;
-    top: 2rem;
-    left: 2rem;
+.burger {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
 
-    background: transparent;
-    border: none;
+  width: 54px;
+  height: 54px;
 
-    color: white;
-    font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    cursor: pointer;
-    z-index: 1000;
-  }
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(10px);
+
+  border: 2px ;
+  border-radius: 14px;
+
+  color: white;
+  font-size: 2rem;
+  line-height: 1;
+
+  cursor: pointer;
+  z-index: 1000;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.burger:hover {
+  background: rgba(0,0,0,.75);
+  border-color: rgba(103,149,64,.7);
+  transform: translateY(-2px);
+}
 
   .navbar {
     position: fixed;
@@ -133,10 +155,15 @@
 
   @media (max-width: 800px) {
     .burger {
-      top: 1.2rem;
-      left: 1.2rem;
-      font-size: 1.8rem;
-    }
+        top: 1.2rem;
+        left: 1.2rem;
+
+        width: 48px;
+        height: 48px;
+
+        font-size: 1.7rem;
+        border-radius: 12px;
+  }
 
     .navbar {
       width: 230px;
