@@ -2,7 +2,16 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 ---
 
-<div class="page-bg"></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WIDA</title>
+  </head>
+
+  <body>
+    <div class="page-bg"></div>
 
 <section class="hero">
   <button class="burger">&#9776;</button>
@@ -116,7 +125,10 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 <footer class="site-footer">
 
+  <div class="footer-logo-row">
   <img src="/WIDAlogo.png" alt="WIDA logo" class="footer-logo" />
+  <img src="/home/footer/sportsgamer.png" alt="SportsGamer logo" class="footer-logo sportsgamer-logo" />
+</div>
 
   <div class="footer-content">
 
@@ -616,10 +628,22 @@ html, body {
   box-sizing: border-box;
 }
 
+.footer-logo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
 .footer-logo {
   display: block;
   width: 120px;
-  margin: 0 auto 3rem auto;
+  height: auto;
+}
+
+.sportsgamer-logo {
+  width: 160px;
 }
 
 .footer-logos {
@@ -689,36 +713,166 @@ html, body {
 
 
 @media (max-width: 800px) {
+  .hero {
+  min-height: 0 !important;
+  height: auto !important;
+  justify-content: flex-start;
+  padding: 2rem 1rem 1rem;
+}
+
+  .logo {
+    width: 110px;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-size: clamp(2.8rem, 16vw, 4.5rem);
+    letter-spacing: 3px;
+  }
+
+  .hero > p {
+    font-size: 0.85rem;
+    margin-top: 0.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .divider,
+  .divider2 {
+    width: min(500px, 85vw);
+    margin: 1.2rem auto;
+  }
+
+  .socials {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .socials a {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+  }
+
+  .live-badge {
+    top: -7px;
+    right: -10px;
+    font-size: 0.5rem;
+    padding: 0.15rem 0.35rem;
+  }
+
+  .about {
+    padding: 0 1rem;
+  }
+
+  .about h2 {
+    font-size: clamp(1.3rem, 7vw, 2rem);
+    letter-spacing: 1px;
+    line-height: 1.25;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+  }
+
+  .about p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+.community-section {
+  width: calc(100% - 2rem);
+  margin: 1rem auto 2rem;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 28px;
+}
+
+  .community-content h2 {
+    font-size: clamp(1.6rem, 9vw, 2.4rem);
+    margin-bottom: 1.2rem;
+  }
+
+  .community-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .community-image img {
+    max-height: 260px;
+    border-radius: 12px;
+  }
+
+  .values-section {
+    width: calc(100% - 2rem);
+    margin: 2rem auto;
+    padding: 3rem 1.5rem;
+    border-radius: 28px;
+  }
+
+  .values-section h2 {
+    font-size: clamp(1.8rem, 9vw, 2.6rem);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .value-row {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+  }
+
+  .value-row img {
+    height: 140px;
+  }
+
+  .value-row h3 {
+    font-size: 1.1rem;
+  }
+
+  .value-row p {
+    font-size: 0.9rem;
+  }
+
   .site-footer {
     width: 100%;
     padding: 4rem 1.5rem;
     overflow-x: hidden;
   }
 
-  .footer-logo {
-    width: 100px;
-    margin: 0 auto 3rem auto;
+  .footer-logo-row {
+    gap: 1.5rem;
+    margin-bottom: 3rem;
   }
 
-.footer-content {
-  display: flex !important;
-  flex-direction: column !important;
+  .footer-logo {
+    width: 90px;
+  }
 
-  width: 100%;
+  .sportsgamer-logo {
+    width: 130px;
+  }
 
-  gap: 3rem;
+  .footer-content {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100%;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+  }
 
-  align-items: center;
-
-  justify-content: center;
-}
-
-.footer-column {
-  width: 100%;
-  max-width: 300px;
-  align-items: center;
-  text-align: center;
-}
+  .footer-column {
+    width: 100%;
+    max-width: 300px;
+    align-items: center;
+    text-align: center;
+  }
 
   .footer-logos {
     padding-left: 0;
@@ -814,3 +968,6 @@ if (dropdownToggle && dropdownMenu) {
     }
   });
 </script>
+
+  </body>
+</html>
