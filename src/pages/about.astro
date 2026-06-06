@@ -1,11 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const founders = [
+  {
+    name: 'Niklas Laine',
+    role: 'Founder & GM',
+    image: '/about/founders/founders.jpg',
+  },
+  {
+    name: 'Joonas Harju',
+    role: 'Video editor, AGM',
+    image: '/about/founders/founders.jpg',
+  },
+  {
+    name: 'Severi Pasma',
+    role: 'Co-Founder',
+    image: '/about/founders/founders.jpg',
+  },
+];
 ---
 
 <Layout title="About us | WIDA">
   <main class="about-page">
     <section class="about-hero">
-
       <h1>About WIDA</h1>
 
       <p>
@@ -15,220 +32,243 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <section class="about-card">
-      <h2>Who we are</h2>
+      <h2>What is Wida?</h2>
 
       <p>
-        Wida is an esports organization competing in the ECL, with teams in both the Pro
-        and Core divisions. What started as a shared passion has grown into a structured
-        and competitive project, built by people who care about both performance and
-        community.
+        Wida is an esports organization competing in the ECL, with teams in both
+        the Pro and Core divisions. What started as a shared passion has grown
+        into a structured and competitive project, built by people who care about
+        both performance and community.
       </p>
 
-      <p> We are not here for a single season. We are here to build something that lasts.</p>
-
+      <p>
+        We are not here for a single season. We are here to build something that lasts.
+      </p>
     </section>
 
+    <section class="mission-vision-section animate-mission-vision">
+      <div class="mission-vision-card mission-card">
+        <div class="card-line"></div>
 
-<section class="founders-section">
-  <h2>Meet our founders</h2>
+        <h2>Mission</h2>
 
-  <div class="founders-grid">
-    <div class="founder-card">
-      <img src="/about/founders/founders.jpg" alt="Founder portrait" />
-
-      <h3>Founder Name</h3>
-      <p>Founder & GM</p>
-    </div>
-
-    <div class="founder-card">
-      <img src="/about/founders/founders.jpg" alt="Founder portrait" />
-
-      <h3>Founder Name</h3>
-      <p>Video editor, AGM</p>
-    </div>
-
-    <div class="founder-card">
-      <img src="/about/founders/founders.jpg" alt="Founder portrait" />
-
-      <h3>Founder Name</h3>
-      <p>Co-Founder</p>
-    </div>
-  </div>
-</section>
-
-
-
-    <section class="about-grid">
-      <div class="about-box">
-        <h3>Competitive mindset</h3>
         <p>
-          We aim to improve every season and represent WIDA with commitment and ambition.
+          Our mission is to compete at a high level while creating an environment
+          where players can grow and feel genuinely part of the organization.
+        </p>
+
+        <p>
+          We believe performance and culture go hand in hand. Strong teams are built
+          on trust, structure, and daily commitment to improvement.
         </p>
       </div>
 
-      <div class="about-box">
-        <h3>Community first</h3>
+      <div class="mission-vision-card vision-card">
+        <div class="card-line"></div>
+
+        <h2>Vision</h2>
+
         <p>
-          We want followers, players, and staff to feel connected to the organization.
+          We aim to establish WIDA as a stable and respected organization within the ECL.
+          Not just through results, but through consistency, professionalism, and the way
+          we treat our people.
+        </p>
+
+        <p>
+          Success for us is long-term presence, steady development, and a community
+          that stands behind the name.
         </p>
       </div>
+    </section>
 
-      <div class="about-box">
-        <h3>Long-term growth</h3>
-        <p>
-          WIDA is built with the goal of becoming stronger both on and off the ice.
-        </p>
+    <section class="founders-section">
+      <h2>Meet our founders</h2>
+
+      <div class="founders-grid">
+        {founders.map((founder) => (
+          <article class="founder-card">
+            <img src={founder.image} alt={`${founder.name} portrait`} />
+
+            <h3>{founder.name}</h3>
+            <p>{founder.role}</p>
+          </article>
+        ))}
       </div>
     </section>
   </main>
 
   <style>
-.about-page {
-  min-height: 100vh;
-  padding: 11rem 2rem 6rem;
-}
+    .about-page {
+      min-height: 100vh;
+      padding: 12rem 2rem 6rem;
+    }
 
     .about-hero {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto 5rem;
       text-align: center;
     }
 
-    .about-logo {
-      width: 140px;
-      margin-bottom: 1.5rem;
-    }
-
     .about-hero h1 {
-      font-size: clamp(3rem, 8vw, 7rem);
+      font-size: clamp(4rem, 9vw, 9rem);
       letter-spacing: 5px;
-      margin: 0 0 1rem;
+      line-height: 1.05;
+      margin: 0 0 2rem;
     }
 
     .about-hero p {
-      max-width: 750px;
+      max-width: 850px;
       margin: 0 auto;
-      font-size: 1.2rem;
-      line-height: 1.6;
-      opacity: 0.85;
+      font-size: 1.25rem;
+      line-height: 1.7;
+      opacity: 0.9;
     }
 
-
-    .founders-section {
-  max-width: 1200px;
-  margin: 6rem auto;
-  text-align: center;
-}
-
-.founders-section h2 {
-  font-size: clamp(3rem, 7vw, 6rem);
-  margin-bottom: 4rem;
-}
-
-.founders-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
-  align-items: start;
-}
-
-.founder-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.founder-card img {
-  width: 260px;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 1.5rem;
-}
-
-.founder-card h3 {
-  color: white;
-  font-size: 1.3rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin: 0 0 0.4rem;
-}
-
-.founder-card p {
-  font-size: 1.1rem;
-  margin: 0;
-  opacity: 0.9;
-}
-
     .about-card {
-      max-width: 1000px;
-      margin: 0 auto 4rem;
-      padding: 4rem;
+      max-width: 1100px;
+      margin: 0 auto 6rem;
+      padding: 4.5rem 4rem;
+
       background: #242424;
       border-radius: 40px;
+
       box-shadow: 0 20px 50px rgba(0,0,0,.35);
       text-align: center;
     }
 
     .about-card h2 {
-      font-size: clamp(2rem, 5vw, 4rem);
-      margin-top: 0;
-      margin-bottom: 2rem;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1.1;
+      margin: 0 0 2rem;
     }
 
     .about-card p {
-      max-width: 750px;
+      max-width: 850px;
       margin: 0 auto 1.5rem;
+
+      font-size: 1.15rem;
+      line-height: 1.75;
+      opacity: 0.88;
+    }
+
+    .mission-vision-section {
+      max-width: 1200px;
+      margin: 6rem auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+    }
+
+    .mission-vision-card {
+      background: #242424;
+      color: white;
+
+      padding: 4rem 3rem;
+      border-radius: 36px;
+
+      box-shadow: 0 20px 50px rgba(0,0,0,.35);
+      border: 1px solid rgba(103,149,64,.25);
+    }
+
+    .card-line {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #679540, transparent);
+      margin-bottom: 3rem;
+    }
+
+    .mission-vision-card h2 {
+      color: #679540;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      margin: 0 0 1.5rem;
+    }
+
+    .mission-vision-card p {
       font-size: 1.1rem;
       line-height: 1.7;
+      margin: 0 0 1rem;
       opacity: 0.85;
     }
 
-    .about-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+    .mission-card,
+    .vision-card {
+      opacity: 0;
+
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
     }
 
-    .about-box {
-      background: rgba(0,0,0,.55);
-      backdrop-filter: blur(10px);
-      padding: 2rem;
-      border-radius: 24px;
+    .mission-card {
+      transform: translateX(-120px);
+    }
+
+    .vision-card {
+      transform: translateX(120px);
+    }
+
+    .animate-mission-vision.visible .mission-card,
+    .animate-mission-vision.visible .vision-card {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+
+    .founders-section {
+      max-width: 1200px;
+      margin: 7rem auto 0;
       text-align: center;
+    }
+
+    .founders-section h2 {
+      font-size: clamp(3rem, 6vw, 5rem);
+      line-height: 1.1;
+      margin: 0 0 4rem;
+    }
+
+    .founders-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .founder-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .founder-card img {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+      margin-bottom: 1.6rem;
+
+      box-shadow: 0 20px 45px rgba(0,0,0,.35);
       border: 1px solid rgba(103,149,64,.35);
     }
 
-    .about-box h3 {
-  color: #679540;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
+    .founder-card h3 {
+      color: white;
+      font-size: 1.25rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 0 0 0.35rem;
+    }
 
-  min-height: 3.2rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-}
-
-    .about-box p {
-      line-height: 1.6;
-      opacity: 0.85;
+    .founder-card p {
+      font-size: 1.05rem;
+      margin: 0;
+      opacity: 0.9;
     }
 
     @media (max-width: 800px) {
       .about-page {
-        padding: 7rem 1rem 4rem;
-      }
-      .about-logo {
-        width: 110px;
+        padding: 8rem 1rem 4rem;
       }
 
       .about-hero {
@@ -236,7 +276,7 @@ import Layout from '../layouts/Layout.astro';
       }
 
       .about-hero h1 {
-        font-size: clamp(2.5rem, 14vw, 4rem);
+        font-size: clamp(3rem, 15vw, 4.8rem);
         letter-spacing: 2px;
       }
 
@@ -244,47 +284,98 @@ import Layout from '../layouts/Layout.astro';
         font-size: 0.95rem;
       }
 
-
-.founders-section {
-  margin: 4rem auto;
-}
-
-.founders-section h2 {
-  font-size: clamp(2.4rem, 11vw, 4rem);
-  margin-bottom: 3rem;
-}
-
-.founders-grid {
-  grid-template-columns: 1fr;
-  gap: 3rem;
-}
-
-.founder-card img {
-  width: 220px;
-  height: 220px;
-}
-
-.founder-card h3 {
-  font-size: 1.1rem;
-}
-
-.founder-card p {
-  font-size: 1rem;
-}
-
-
       .about-card {
         padding: 3rem 1.5rem;
         border-radius: 28px;
+        margin-bottom: 4rem;
       }
 
       .about-card p {
         font-size: 0.95rem;
       }
 
-      .about-grid {
+      .mission-vision-section {
         grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 4rem auto;
+      }
+
+      .mission-vision-card {
+        padding: 3rem 1.5rem;
+        border-radius: 28px;
+      }
+
+      .card-line {
+        margin-bottom: 2rem;
+      }
+
+      .mission-vision-card h2 {
+        font-size: clamp(2rem, 10vw, 3rem);
+      }
+
+      .mission-vision-card p {
+        font-size: 0.95rem;
+      }
+
+
+      .mission-card,
+      .vision-card {
+        transform: translateY(50px);
+      }
+
+      .animate-mission-vision.visible .mission-card,
+      .animate-mission-vision.visible .vision-card {
+        transform: translateY(0);
+      }
+      .founders-section {
+        margin-top: 5rem;
+      }
+
+      .founders-section h2 {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+        margin-bottom: 3rem;
+      }
+
+      .founders-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+
+      .founder-card img {
+        width: 220px;
+        height: 220px;
+      }
+
+      .founder-card h3 {
+        font-size: 1.1rem;
+      }
+
+      .founder-card p {
+        font-size: 1rem;
       }
     }
   </style>
+
+
+  <script>
+  const missionVisionSection = document.querySelector('.animate-mission-vision');
+
+  if (missionVisionSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          missionVisionSection.classList.add('visible');
+          observer.unobserve(missionVisionSection);
+        }
+      });
+    }, {
+      threshold: 0.25,
+    });
+
+    observer.observe(missionVisionSection);
+  }
+</script>
+
+
+
 </Layout>
