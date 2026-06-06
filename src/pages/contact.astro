@@ -1,0 +1,330 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact | WIDA">
+  <main class="contact-page">
+    <section class="contact-hero">
+      <h1>Contact WIDA</h1>
+
+      <p>
+        For general questions, partnership inquiries, team-related matters,
+        or anything else regarding WIDA, feel free to contact us.
+      </p>
+    </section>
+
+    <section class="contact-grid">
+      <article class="contact-card main-contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+
+        <h2>Email us</h2>
+
+        <p>
+          The best way to reach WIDA directly is through our official email.
+        </p>
+
+        <a href="mailto:widaesport@gmail.com" class="contact-button">
+          widaesport@gmail.com
+        </a>
+      </article>
+
+      <article class="contact-card">
+        <div class="contact-icon">
+          <i class="fab fa-discord"></i>
+        </div>
+
+        <h2>Join Discord</h2>
+
+        <p>
+          Join our Discord server to follow the team, stay updated,
+          and become part of the WIDA community.
+        </p>
+
+        <a
+          href="https://discord.com/invite/EbpBmBbVuz"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-button"
+        >
+          Join Discord
+        </a>
+      </article>
+
+      <article class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-share-nodes"></i>
+        </div>
+
+        <h2>Follow us</h2>
+
+        <p>
+          Follow WIDA on social media for updates, matches, announcements,
+          and community content.
+        </p>
+
+        <div class="social-links">
+          <a href="https://www.instagram.com/widaesport/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <a href="https://www.twitch.tv/widaesport" target="_blank" rel="noopener noreferrer" aria-label="Twitch">
+            <i class="fab fa-twitch"></i>
+          </a>
+
+          <a href="https://www.tiktok.com/@widaesport" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+
+          <a href="https://www.youtube.com/@widaesport" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+
+          <a href="https://x.com/widaesport" target="_blank" rel="noopener noreferrer" aria-label="X">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <section class="contact-note">
+      <h2>Partnerships & inquiries</h2>
+
+      <p>
+        Whether you are interested in working with WIDA, contacting the organization,
+        or asking about future opportunities, send us a message and we will get back
+        to you as soon as possible.
+      </p>
+    </section>
+  </main>
+
+  <style>
+    .contact-page {
+      min-height: 100vh;
+      padding: 12rem 2rem 6rem;
+    }
+
+    .contact-hero {
+      max-width: 1000px;
+      margin: 0 auto 5rem;
+      text-align: center;
+    }
+
+    .contact-hero h1 {
+      font-size: clamp(4rem, 9vw, 9rem);
+      letter-spacing: 5px;
+      line-height: 1.05;
+      margin: 0 0 2rem;
+    }
+
+    .contact-hero p {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: 1.25rem;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+
+    .contact-grid {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .contact-card {
+      background: #242424;
+      border-radius: 36px;
+      padding: 3.5rem 2.5rem;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      box-shadow: 0 20px 50px rgba(0,0,0,.35);
+      border: 1px solid rgba(103,149,64,.25);
+    }
+
+    .main-contact-card {
+      border-color: rgba(103,149,64,.55);
+    }
+
+    .contact-icon {
+      width: 80px;
+      height: 80px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid #679540;
+      border-radius: 50%;
+
+      color: white;
+      font-size: 2rem;
+
+      margin-bottom: 2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .contact-card h2 {
+      color: #679540;
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      margin: 0 0 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .contact-card p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      opacity: 0.85;
+      margin: 0 0 2rem;
+    }
+
+    .contact-button {
+      display: inline-block;
+
+      background: #679540;
+      color: #0b0b0b;
+
+      padding: 1rem 1.4rem;
+
+      font-weight: 700;
+      text-decoration: none;
+
+      border-radius: 10px;
+
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .contact-button:hover {
+      background: #7caf4d;
+      transform: translateY(-2px);
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-top: auto;
+    }
+
+    .social-links a {
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid #679540;
+      border-radius: 50%;
+
+      color: white;
+      text-decoration: none;
+      font-size: 1.3rem;
+
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .social-links a:hover {
+      background: #679540;
+      transform: translateY(-3px);
+      box-shadow: 0 0 18px rgba(103,149,64,.55);
+    }
+
+    .contact-note {
+      max-width: 1000px;
+      margin: 6rem auto 0;
+      padding: 4rem;
+
+      background: rgba(0,0,0,.55);
+      backdrop-filter: blur(10px);
+
+      border-radius: 36px;
+      border: 1px solid rgba(103,149,64,.25);
+
+      text-align: center;
+    }
+
+    .contact-note h2 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      margin: 0 0 1.5rem;
+    }
+
+    .contact-note p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      opacity: 0.85;
+    }
+
+    @media (max-width: 1000px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .contact-page {
+        padding: 8rem 1rem 4rem;
+      }
+
+      .contact-hero {
+        margin-bottom: 3rem;
+      }
+
+      .contact-hero h1 {
+        font-size: clamp(3rem, 15vw, 4.8rem);
+        letter-spacing: 2px;
+      }
+
+      .contact-hero p {
+        font-size: 0.95rem;
+      }
+
+      .contact-card {
+        padding: 3rem 1.5rem;
+        border-radius: 28px;
+      }
+
+      .contact-icon {
+        width: 68px;
+        height: 68px;
+        font-size: 1.6rem;
+      }
+
+      .contact-card p {
+        font-size: 0.95rem;
+      }
+
+      .contact-button {
+        width: 100%;
+        max-width: 280px;
+        font-size: 0.9rem;
+      }
+
+      .contact-note {
+        padding: 3rem 1.5rem;
+        border-radius: 28px;
+        margin-top: 4rem;
+      }
+
+      .contact-note p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</Layout>
