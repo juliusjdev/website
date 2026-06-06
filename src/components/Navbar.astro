@@ -185,18 +185,40 @@
 <script>
   const burger = document.querySelector('.burger');
   const navbar = document.querySelector('.navbar');
-
-  if (burger && navbar) {
-    burger.addEventListener('click', () => {
-      navbar.classList.toggle('open');
-    });
-  }
-
   const dropdownToggle = document.querySelector('.dropdown-toggle');
   const dropdownMenu = document.querySelector('.dropdown-menu');
 
+  if (burger && navbar) {
+    burger.addEventListener('click', (event) => {
+      event.stopPropagation();
+      navbar.classList.toggle('open');
+    });
+
+    navbar.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+
+    document.addEventListener('click', () => {
+      navbar.classList.remove('open');
+
+      if (dropdownMenu) {
+        dropdownMenu.classList.remove('open');
+      }
+
+      if (dropdownToggle) {
+        const icon = dropdownToggle.querySelector('.dropdown-icon');
+
+        if (icon) {
+          icon.textContent = '+';
+        }
+      }
+    });
+  }
+
   if (dropdownToggle && dropdownMenu) {
-    dropdownToggle.addEventListener('click', () => {
+    dropdownToggle.addEventListener('click', (event) => {
+      event.stopPropagation();
+
       dropdownMenu.classList.toggle('open');
 
       const icon = dropdownToggle.querySelector('.dropdown-icon');
