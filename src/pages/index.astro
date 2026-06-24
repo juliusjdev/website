@@ -124,17 +124,17 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .hero {
-      min-height: 100vh;
+  min-height: 100vh;
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 
-      position: relative;
-      padding: 2rem;
-      text-align: center;
-    }
+  position: relative;
+  padding: 13rem 2rem 4rem;
+  text-align: center;
+}
 
 
     h1 {
@@ -381,12 +381,12 @@ import Layout from '../layouts/Layout.astro';
     }
 
     @media (max-width: 800px) {
-      .hero {
-        min-height: 0 !important;
-        height: auto !important;
-        justify-content: flex-start;
-        padding: 5rem 1rem 1rem;
-      }
+  .hero {
+    min-height: 0 !important;
+    height: auto !important;
+    justify-content: flex-start;
+    padding: 7rem 1rem 1rem;
+  }
 
 
       h1 {
