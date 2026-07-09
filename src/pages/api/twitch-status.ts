@@ -26,7 +26,9 @@ let cachedToken: {
 } | null = null;
 
 const getEnvValue = (key: string) => {
-  return env[key as keyof typeof env] ?? import.meta.env[key];
+  const runtimeEnv = env as Record<string, string | undefined>;
+
+  return runtimeEnv[key] ?? import.meta.env[key];
 };
 
 const getTwitchAccessToken = async (
